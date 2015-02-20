@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+ <web-app 
+ 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	id="WebApp_ID" 
+	version="2.5">
+
+	<welcome-file-list>
+		<welcome-file>index1.jsp</welcome-file>
+	</welcome-file-list>
+	<display-name>Archetype Created Web Application</display-name>
+
+	<!-- upon initialization of spring DispatcherServlet, the framework will 
+		try to load the application context from a file named [servlet-name]-servlet.xml 
+		located in the application's WebContent/WEB-INF directory. -->
+	<!-- <servlet-mapping> tag indicates what URLs will be handled by the which 
+		DispatcherServlet. Here all type of the HTTP requests ending with .jsp will 
+		be handled by the spring DispatcherServlet. -->
+
+	<servlet>
+		<servlet-name>MainDispatcher</servlet-name>
+		<servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>MainDispatcher</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+
+	<!-- If you do not want to go with default filename as [servlet-name]-servlet.xml 
+		and default location as WebContent/WEB-INF, you can customize this file name 
+		and location by adding the servlet listener ContextLoaderListener in your 
+		web.xml file as follows: -->
+
+	<!-- <context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>/WEB-INF/customizeDispatcher-servlet.xml</param-value>
+	</context-param>
+
+	<listener>
+		<listener-class>
+			org.springframework.web.context.ContextLoaderListener
+		</listener-class>
+	</listener>
+ -->
+
+</web-app>
